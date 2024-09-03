@@ -7,4 +7,4 @@ DAY 1 - How to Create a Logical Diagram
 ![Screenshot 2024-09-02 162914](https://github.com/user-attachments/assets/eae6e619-c49e-4be2-9233-c30a9cce07ab)
 
 
-Day 2 - ELK Stack Introduction
+
