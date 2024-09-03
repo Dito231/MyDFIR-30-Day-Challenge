@@ -1,0 +1,49 @@
+ELK Stack Introduction
+
+Objective: Better understanding of what the ELK stack is and the benefits.
+
+E - ELK | Elastic seach
+
+Database to store logs -  WWindows event LOGS, syslogs, firewall logs, etc - you can search accross data with querey language called ESQL.
+It also uses REST APIs and JSON.
+
+L - Logstash - pipeline that collects telemetry (Telemetry is the automated process of collecting and transmitting data from remote sources for monitoring and analysis) from different sources. Beats and Elastic agents. 
+
+Types of beats
+File Beat - Logs
+Metric Beat - Metrics
+Packet Beat - Network Data
+Winlog Beat - Windows Events
+Audit Beat - Audit Data
+Heartbeat beat - Uptime monitoring
+
+Another way is the Elastic Agent using 1 unified agent per host. 
+
+What is parsing? Pulling out certain values out of a log and mapping it to a certain name.
+
+K - Kibana 
+Query through logs, build dashboards, and Data Exploration. Machine learning, Elastic maps, Alerting etc
+
+Search Data
+Create Visualizations
+Create Reports
+Create Alerts
+
+Elasticsearch = Indexer / Search head
+
+logstash = Heavy Forwarder
+
+Kibana = Web GUI
+
+Beats/Agents = Universal Forwarders
+
+BENEFITS OF USING ELK
+
+1. Centralized Logging - Meet complicance requirements & search data
+2. Flexibility - Customized Ingestion
+3. Visualizations - Observer information at-a-glace
+4. Scalability - Easy to configure to handle larger environments
+5. Ecosystems - Many integrations and rich community
+
+
+BONUS - Many SIEMS are built on the ELK stack. 
