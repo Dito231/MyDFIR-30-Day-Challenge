@@ -1,0 +1,30 @@
+Installed a cloud instance on Vultr.com 
+In today's video, I learned how to set up Elasticsearch, the core piece of the ELK stack. Steven from MyDFIR guided me through the installation and configuration process. 
+Next, I set up the VM in the cloud as an ubuntu machine, and connected a Virtual Private Cloud 2.0. Then I added a firewall group that blocked the internet from accessing my Elasticsearch with SSH, so the cloud is a bit hardened. 
+I copied the security autconfiguration info, in case I need to enter the generated password for the built-in superuser. I can also change this password. 
+
+
+In terminal, making sure Elasticsearch is enabled and running:
+
+root@DITO-ELK:/etc/elasticsearch# systemctl daemon-reload
+root@DITO-ELK:/etc/elasticsearch# systemctl enable elasticsearch.service
+Created symlink /etc/systemd/system/multi-user.target.wants/elasticsearch.service → /lib/systemd/system/elasticsearch.service.
+root@DITO-ELK:/etc/elasticsearch# systemctl start elasticsearch.service
+systemroot@DITO-ELK:/etc/elasticsearch# systemctl status elasticsearch.service
+● elasticsearch.service - Elasticsearch
+     Loaded: loaded (/lib/systemd/system/elasticsearch.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2024-09-03 05:11:54 UTC; 18s ago
+       Docs: https://www.elastic.co
+   Main PID: 3514 (java)
+      Tasks: 91 (limit: 19042)
+     Memory: 8.4G
+        CPU: 40.139s
+     CGroup: /system.slice/elasticsearch.service
+             ├─3514 /usr/share/elasticsearch/jdk/bin/java -Xms4m -Xmx64m -XX:+UseSerialGC -Dcli.name=server -Dcli.script=/usr/share/elasticsearch/bin/elast>
+             ├─3573 /usr/share/elasticsearch/jdk/bin/java -Des.networkaddress.cache.ttl=60 -Des.networkaddress.cache.negative.ttl=10 -Djava.security.manage>
+             └─3596 /usr/share/elasticsearch/modules/x-pack-ml/platform/linux-x86_64/bin/controller
+
+Sep 03 05:11:42 DITO-ELK systemd[1]: Starting Elasticsearch...
+
+
+I'm SSHng into the vm next time via powershell. End of today's challenge, I can't wait for tomorrow!
