@@ -11,7 +11,7 @@
           <mxGeometry x="20" y="250" width="591.75" height="330" as="geometry" />
         </mxCell>
         <mxCell id="aNrNENJhGVUGavfEX417-1" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.traditional_server;fillColor=#7D7C7C;gradientColor=none;" parent="1" vertex="1">
-          <mxGeometry x="466.63" y="597" width="46.5" height="63" as="geometry" />
+          <mxGeometry x="476.51" y="627" width="46.5" height="63" as="geometry" />
         </mxCell>
         <mxCell id="aNrNENJhGVUGavfEX417-2" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.traditional_server;fillColor=#005900;strokeColor=#005700;fontColor=#ffffff;" parent="1" vertex="1">
           <mxGeometry x="270.01" y="486.5" width="46.5" height="63" as="geometry" />
@@ -28,7 +28,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="aNrNENJhGVUGavfEX417-4" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.traditional_server;fillColor=#7D7C7C;gradientColor=none;" parent="1" vertex="1">
-          <mxGeometry x="76.75" y="607" width="46.5" height="63" as="geometry" />
+          <mxGeometry x="90.25" y="620" width="46.5" height="63" as="geometry" />
         </mxCell>
         <mxCell id="aNrNENJhGVUGavfEX417-5" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.traditional_server;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
           <mxGeometry x="270.01" y="270" width="46.5" height="63" as="geometry" />
@@ -46,10 +46,10 @@
           <mxGeometry x="244.88" y="360" width="96.75" height="30" as="geometry" />
         </mxCell>
         <mxCell id="aNrNENJhGVUGavfEX417-19" value="Ubuntu Server SSH Enabled" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="450" y="640" width="79.76" height="30" as="geometry" />
+          <mxGeometry x="450" y="690" width="79.76" height="30" as="geometry" />
         </mxCell>
         <mxCell id="aNrNENJhGVUGavfEX417-20" value="&lt;pre&gt;Windows Server&lt;br&gt;RDP Enabled&lt;/pre&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="70" y="640" width="60" height="30" as="geometry" />
+          <mxGeometry x="76.75" y="690" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="aNrNENJhGVUGavfEX417-21" value="Fleet Server" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="255.01" y="549.5" width="76.5" height="30" as="geometry" />
