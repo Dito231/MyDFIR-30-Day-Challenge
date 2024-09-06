@@ -1,0 +1,4 @@
+Installed a cloud instance of Windows Server 2022 - Made it visible to the internet, no firewall group, and its NOT a part of my VPC, so the other instances are safe if the windows server gets compromised. 
+Made sure to try and RDP so I can see if RDP Port is exposed - We can collect Telemetry!
+
+Windows Server 2022 created. Waiting for Day 5. 
