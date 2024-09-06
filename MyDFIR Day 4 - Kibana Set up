@@ -1,0 +1,36 @@
+SSH into machine. Download Kibana with wget in CLI. dpkg -i [filename.deb].
+
+nano /etc/kibana/kibana.yml
+
+systemctl daemon-reload
+systemctl enable kibana.service
+systemctl start kibana.service
+systemctl status kibana.service
+
+
+Need to generate elastic search enrollment token. -  cd /usr/share/elasticsearch/bin ;   ./elasticsearch-create-enrollment-token --scope kibana
+
+Connection to IP ADDRESS:5601 not working. Firewall rules for the VULTR cloud firewall group need to be managed. Created a role to:  Action( accept)  |   Protocol (TCP)   |  Port(or range)   (1-65535  | Source (MY IP)
+
+Connection to IP ADDRESS:5601 still not working. In vm, we added a firewall rule within VM to let everything coming into the port access with -   ufw allow 5601
+
+SUCCESS!
+
+
+Elastic needs search enrollment token. Provide from my .txt file. Next, it needs kibana-verification-code. Go to /usr/share/kibana/bin and execute the binary named kibana-verification-code. 
+Copy the code into kibana, then sign in with username and password. 
+
+Last config is to add "Keystores"
+
+Go to alerts under security in kibana. It calls for an encryption key so we can delete or modify rules after kibana starts. Find this on vm in kibana-encryption-keys, execute it with "./kibana-encryption-keys generate" and add it to the kibana.yml file.
+
+Find kibana-encryption-keys binary, execute it, copy and paste the 3 values into .txt file and then:
+
+root@DITO-ELK:/usr/share/kibana/bin# ./kibana-keystore add xpack.encryptedSavedObjects.encryptionKey
+Enter value for xpack.encryptedSavedObjects.encryptionKey: ******************************
+root@DITO-ELK:/usr/share/kibana/bin# ./kibana-keystore add xpack.reporting.encryptionKey
+Enter value for xpack.reporting.encryptionKey: ******************************
+root@DITO-ELK:/usr/share/kibana/bin# ./kibana-keystore add xpack.security.encryptionKey
+Enter value for xpack.security.encryptionKey: *********************************
+
+We have successfully installed kibana!
