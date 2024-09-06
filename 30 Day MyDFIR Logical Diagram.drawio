@@ -40,7 +40,7 @@
           <mxGeometry x="776.5" y="70" width="46.5" height="63" as="geometry" />
         </mxCell>
         <mxCell id="aNrNENJhGVUGavfEX417-17" value="VULTR" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="90" y="210" width="60" height="30" as="geometry" />
+          <mxGeometry x="70" y="210" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="aNrNENJhGVUGavfEX417-18" value="Elastic &amp;amp; Kibana" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="244.88" y="360" width="96.75" height="30" as="geometry" />
