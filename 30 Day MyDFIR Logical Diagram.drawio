@@ -127,6 +127,9 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="LWK1aguUJlo9VhWStzpI-21" value="Private Network: 172.31.0.0/24&lt;br&gt;IP Range: 172.31.0.1 1-254&lt;br&gt;Subnet Masjk: 255.255.255.0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="290" width="190" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
