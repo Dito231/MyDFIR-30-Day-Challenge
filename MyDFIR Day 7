@@ -1,0 +1,33 @@
+Objective: Install Elastic Agent on Windows Server and Enroll the Windows Server into a Fleet.
+
+Create Server in Vultr for a new Fleet Server
+
+Go to public url for Elastic Cloud, Then add a fleet server in management tab. Port of fleet server is 8220 by default. Quickstart, Input the host url of the Fleetserver, using public IP.
+
+Generate fleet server policy, then Install Fleet server to a centralized host. Before doing this, update your Firewall group settings. 
+Take the public IP address of the fleet server - allow everything, custom, and input fleet server IP.
+
+modify firewall rule on ELK server - ufw allow 9200 (port for elastic search)
+
+Run group policy, which will install elastic agent and enroll.
+
+RECAP - Noticed firewall rule was restrictive. Public ip was allowed to access elk server, but fleek server needs to access elastic search - elastic listens on port 9200. 
+Need to modify rule to allow fleet server to communicate with elk server. Then modify vm fireall to aow incoming connections to 9200. Now we can enroll fleet server. 
+
+
+Now we can install elastic agents on windows server - monitor windows host, create windows policy. Back to windows server host, and in powershell we will input the policy. 
+Elastic agent is installed but we get an error - failed for unknown reason. We can ping fleet server just fine. Port is open - check on default port assignments in elastic. There is no firewall in front of fleet server.
+We modify the firewall of the fleet server to allow port 8220. ufw allow 8220. 
+
+Please try again on the Windows server to run the policy. We get an error message: The agent is attempting to enroll on port 443. We allow port 445 on the fleet server.
+
+I still get a failure: I fail to enroll and execute the request. The target machine refuses connection. 
+
+We can't enroll our agent into our fleet server because in elastic web GUI, in management we go to settings - The Fleet server uses port 443 but the default port is 8220. So we change the port in the fleet settings,
+then modify the url to remove 443 and input 8220. We fail to enroll again because of unknown certificate authority. Add --insecure to end of windows policy. 
+
+In advanced fleet server creation, we can create our own certificate authority (level effect has a great resource on this).
+
+We succeed! We start capturing logs, including failed login attempts!!!
+
+Next, we do Sysmon log setup!
