@@ -1,0 +1,29 @@
+Elastic Agent and Fleet Server Introduction
+
+
+Elastic agent - proveides a unified way to add monoroting for logs, metrics, and many other types of data. It works off policies tha you can update, add additional integrations, protections, and will bne used to tell endpoint what logs to forward to elastic search. 
+
+What is difference between a beat and an agent?
+
+Depending on data you want to collect, you';ll install multiple beats on a host. An agent will collect various types of logs. 
+
+Fleet Server - collects elastic agents to a fleet. You can update agents policy easily, or forward them into a logstash instance. 
+
+From Elastic:
+
+
+
+Beats and Elastic Agent capabilities
+
+
+Elastic provides two main ways to send data to Elasticsearch:
+
+    Beats are lightweight data shippers that send operational data to Elasticsearch. Elastic provides separate Beats for different types of data, such as logs, metrics, and uptime. Depending on what data you want to collect, you may need to install multiple shippers on a single host.
+
+    Elastic Agent is a single agent for logs, metrics, security data, and threat prevention. The Elastic Agent can be deployed in two different modes:
+        Managed by Fleet — The Elastic Agent policies and lifecycle are centrally managed by the Fleet app in Kibana. The Integrations app also lets you centrally add integrations with other popular services and systems. This is the recommended option for most users.
+        Standalone mode — All policies are applied to the Elastic Agent manually as a YAML file. This is intended for more advanced users. See Install standalone Elastic Agents for more information.
+
+The method you use depends on your use case, which features you need, and whether you want to centrally manage your agents.
+
+Beats and Elastic Agent can both send data directly to Elasticsearch or via Logstash, where you can further process and enhance the data, before visualizing it in Kibana.
