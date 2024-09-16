@@ -1,0 +1,3 @@
+What is Sysmon & Sysmon Setup Tutorial
+
+Installed Sysmon on Windows VM, and added Olaf Sysmon Config file to sysmon folder. https://github.com/olafhartong/sysmon-modular
