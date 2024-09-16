@@ -1,0 +1,10 @@
+Elasticsearch Ingest Data Tutorial
+
+INGESTED SYSMON DATA INTO ELASTICSEARCH - went to event viewer, found sysmon and went to operational logs. Right click for properties - Full name is the Channel name in elastic search. 
+
+Now Windows Defender logs - we're only ingesting a few logs for this challenge, not everything because you'll most likely get informational data too.
+
+We're looking at EventID 1116, 1117, and 5001. 
+
+
+If you don't see any value under cpu and memory in fleets/agents, you need to allow incoming connections on port 9200. 
