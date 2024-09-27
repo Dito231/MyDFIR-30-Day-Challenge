@@ -1,0 +1,30 @@
+Remote Desktop Protocol Introduction (High-Level)
+
+RDP is a communication between terminal server and terminal client. Port 3389. Allows authorized users to conenct to endpoints. 
+
+Time-Saver, Accesible, Conveinient. 
+
+Exposed RDP service - how attackers attack it. Bruteforce or phished valid account. Once attacker is there, one can do a credential dump and move laterally to other units. 
+
+DATA EXFILTRATION, DEPLOY RANSOMWARE, OR BOTH
+
+How to find exposed RDP servers?
+
+Shodan
+
+Create account, search port:3389. 
+
+4 Mil assets with RDP open. 
+
+CENSYS - SEARCH NOW. TYPE IN 3389 and filter. 
+
+USE THESE SERVICES TO UNDERSTAND. 
+
+
+USE MFA to protect yourself. 
+
+Restrict access - implement firewall rules to limit who can log in via RDP - IP ranges
+
+Better passwords! 
+
+Dont use default accounts - disable them, and make a new admin admin account 
