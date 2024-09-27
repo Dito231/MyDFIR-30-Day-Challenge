@@ -1,0 +1,22 @@
+How to Create Alerts and Dashboards in Kibana | Day 16 (2/4)
+
+
+Observe authentication logs from our windows server and create an alert
+
+Filter Windows machine agent
+
+Windows Event ID 4625   - failed Logon Attempt, type 3
+
+failed attempts
+user
+source ip
+
+QUERY - event.code: 4625 and agent.name: MYDFIR-WIN-DITO
+
+Security - Rules    to make alerts that give you good info. DETECTION RULES, Create New Rule
+
+
+NOW WE'VE CREATED TWO BRUTEFORCE ALERTS/ DETECTION RULES - one looking for bruteforce auth attempts in lunix and one in windows
+
+What are other options to create?
+
