@@ -1,0 +1,42 @@
+Day 11 - Lesson on Bruteforcing
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Day 12 - Ubuntu Server 24.02 Installation. 
+
+Check linux authentication logs to see who is trying to authenticate to the server. Will mostly get failures.
+
+go to
+
+cd /var/log
+
+look for auth.log. This is where authentication attempts are logged.
+
+cat auth.log to get a look. 
+
+use "grep -i failed auth.log"
+"grep i- failed auth.log | grep -i root"
+grep -i failed auth.log | grep -i root | cut -d ' ' -f 1          -> This uses cut -d, which is a delimiter. Delimiter for space, 1 being the amount of strings before the first space.
+
+use grep -i failed auth.log | grep -i root | cut -d ' ' -f 9      -> Use this to get the IP address in the log
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Day 13 - How to install Elastic Agent on Ubuntu
+
+Create agent policy on elastic, in the fleet management tab. 
+
+copy linux code to install agent - paste to linux server. Fails - need to add --insecure. so tap up a few times to get sudo ./elastic-agent install
+
+
+go to elastic and ao to agent.name in available fields (you're in the discover tab now). Filter for the logs coming from your linux server. Go to your server and filter again for failed auth logs, using the
+delimiter to grab the IP address. copy that Ip and put it into the search bar along with "and authentication failure". Click into the log you see and expand it. Rows per page 500. 
+Scroll down to message. 
+
+message
+pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=43.156.212.126  user=root
+
+
+Go to message and highlight it. Click 'Toggle column in table'
+Now you can see messae in your table, which makes it easier to read. 
