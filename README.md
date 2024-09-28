@@ -9,5 +9,6 @@ DAY 1 - How to Create a Logical Diagram
 
 
 
-https://app.diagrams.net/#HDito231%2FMyDFIR-30-Day-Challenge%2Fmain%2FUntitled%20Diagram.drawio#%7B%22pageId%22%3A%22AM6U1227SiyUS_jFqa7l%22%7D
 
+![Screenshot 2024-09-28 144956](https://github.com/user-attachments/assets/f102a726-e2c1-4b43-867e-bc3afd4de097)
+![Screenshot 2024-09-28 145008](https://github.com/user-attachments/assets/82b2588b-4bfb-44ff-8f06-a5144b8b3ef9)
