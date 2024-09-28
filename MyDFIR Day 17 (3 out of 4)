@@ -1,7 +1,13 @@
 How to Create Alerts and Dashboards in Kibana Day 17 3/4
 
+
+FAILED AUTH QUERY LANGUAGE
 event.code: 4625 and agent.name: MYDFIR-WIN-DITO
 
+
+SUCCESSFUL AUTH QUERY LANGUAGE
 event 4624 -- winlog.event_data.LogonType
 
 event.code: 4624 and (winlog.event_data.LogonType or winlog.event_data.LogonType: 7)
+
+Created ALERTS AND DASHBOARDS - can I build additional ones?
