@@ -1,0 +1,49 @@
+COMMAND AND CONTROL INTRODUCTION, DAY 18 (HIGH LEVEL)
+
+What is a C2? Why is it important? What are some tool/frameworks, and what is Mythic and how dows it work?
+
+COMMAND AND CONTROL
+
+The adversary is trying to communicate with compromised systems to control them. 
+
+Credential Access
+lateral movement
+Exfiltration
+Impact
+
+Command and control Channels -  MITRE ATT&CK: https://attack.mitre.org/tactics/TA0011/
+
+Metasploit
+Forta Cobalt Strike
+Bishopfox Sliver
+Mythic - Developed by Cody Thomas
+
+
+DAY 19 - How to Create an Attack Diagram
+
+
+
+Day 20 - Set up Mythic server
+
+Download Kali and VM for mythic. update mythic, apt install docker clone, apt install make
+
+CLONE MYTHIC REPOSITORY BY -   git clone [Codelink]
+
+go to mythic folder, ./install ubuntu version. Enter twice.
+
+finish install. Enter  "make"
+
+if docker not running, systemctl status docker. systemctl restart docker. 
+
+With docker running, enter make into terminal. 
+
+Start mythic with "./mythic-cli start"
+
+
+Custom Firewall group for Mythic server needs to be set up. Then in this group, apply firewall rules for 
+mythic server connection - tcp port range 1-65535, custom IP of both windows and SSH servers - 2 rules in total. 
+
+Go to web gui via IP address and port 7443
+
+Mythic username -   mythic-admin
+pw in .env file, which is hidden on mythic machine. cat .env to find MYTHIC_ADMIN_PASSWORD. 
