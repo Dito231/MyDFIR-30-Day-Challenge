@@ -1,9 +1,65 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0" version="24.7.16">
   <diagram name="Page-1" id="AM6U1227SiyUS_jFqa7l">
-    <mxGraphModel>
+    <mxGraphModel dx="1642" dy="964" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="s9EOSlfGhYIO4utFcJ4W-1" value="Mythic C2" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.traditional_server;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="112" y="578" width="46.5" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="s9EOSlfGhYIO4utFcJ4W-2" value="SSH Server" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.traditional_server;fillColor=#7D7C7C;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="648" y="583" width="46.5" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="s9EOSlfGhYIO4utFcJ4W-3" value="Windows Server" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.traditional_server;fillColor=#7D7C7C;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="650" y="178" width="46.5" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="s9EOSlfGhYIO4utFcJ4W-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="s9EOSlfGhYIO4utFcJ4W-4" target="s9EOSlfGhYIO4utFcJ4W-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s9EOSlfGhYIO4utFcJ4W-10" value="RDP Brute Force" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="s9EOSlfGhYIO4utFcJ4W-8">
+          <mxGeometry x="0.0184" y="4" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s9EOSlfGhYIO4utFcJ4W-4" value="Attacker Laptop &lt;br&gt;Kali Linux" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=#b85450;fillColor=#f8cecc;shape=mxgraph.azure.computer;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="139" y="187" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="s9EOSlfGhYIO4utFcJ4W-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="s9EOSlfGhYIO4utFcJ4W-6" target="s9EOSlfGhYIO4utFcJ4W-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s9EOSlfGhYIO4utFcJ4W-6" value="" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/internet_cloud.svg;" vertex="1" parent="1">
+          <mxGeometry x="352" y="172" width="119.05" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="s9EOSlfGhYIO4utFcJ4W-7" value="Phase 1&lt;br&gt;Initial Access" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="364" y="87" width="89" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="s9EOSlfGhYIO4utFcJ4W-12" value="Internet" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="382.53" y="195" width="58" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s9EOSlfGhYIO4utFcJ4W-13" value="Windows Server" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.traditional_server;fillColor=#7D7C7C;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="640.75" y="334" width="46.5" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="s9EOSlfGhYIO4utFcJ4W-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="s9EOSlfGhYIO4utFcJ4W-16" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="342.75" y="366" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s9EOSlfGhYIO4utFcJ4W-15" value="RDP Brute Force" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="s9EOSlfGhYIO4utFcJ4W-14">
+          <mxGeometry x="0.0184" y="4" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s9EOSlfGhYIO4utFcJ4W-16" value="Attacker Laptop &lt;br&gt;Kali Linux" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=#b85450;fillColor=#f8cecc;shape=mxgraph.azure.computer;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="129.75" y="343" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="s9EOSlfGhYIO4utFcJ4W-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" target="s9EOSlfGhYIO4utFcJ4W-13" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="461.75" y="366" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s9EOSlfGhYIO4utFcJ4W-18" value="Internet" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="373.28" y="351" width="58" height="26" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
