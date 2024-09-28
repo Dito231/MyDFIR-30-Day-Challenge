@@ -20,7 +20,7 @@ Create Alert by clicking 'Alert' and going to Create rule/new alert
 
 go to maps to create a dashboard and add the query. Then click Add layer. Cloropleth layer. World Countries, join field, data view - .alerts-security.alerts-default,apm-*-transaction* etc, join field - source.geo.country_iso_code
 
-system.auth.ssh.event: * and agent.name: MYDFIR-Linux-DITO user.name and system.auth.ssh.event: Failed
+system.auth.ssh.event: * and agent.name: MYDFIR-Linux-DITO and system.auth.ssh.event: Failed
 
 
 Created alerts and a dashboard for burteforce attempts!
