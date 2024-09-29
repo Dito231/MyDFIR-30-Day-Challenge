@@ -1,0 +1,70 @@
+How to Create Alerts and Dashboards in Kibana
+
+svchost-DITO.exe and event.code:1   (for process creation)
+
+copy the SHA1 hash look at VT
+
+
+winlog.event_data.OriginalFileName       - SHOWS APOLLO.EXE
+
+winlog.event    TONS OF DATA
+
+
+OriginalFileName:Apollo.exe
+SHA256:
+
+Field:   winlog.event_data.OriginalFileName
+winlog.event_data.Hashes
+
+
+QUERY-    svchost-DITO.exe and event.code:1 and winlog.event_data.Hashes * and CEE7A80C476719D605855773227E6D102692DFBBB34D2110011A6B78BFCAC21A or winlog.event_data.OriginalFileName:Apollo.exe
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+svchost-DITO.exe and event.code:1 and (winlog.event_data.Hashes * and CEE7A80C476719D605855773227E6D102692DFBBB34D2110011A6B78BFCAC21A* or winlog.event_data.OriginalFileName:Apollo.exe)   - Process creation
+
+MORE SPECIFIC -     event.code:1 and (winlog.event_data.Hashes: *CEE7A80C476719D605855773227E6D102692DFBBB34D2110011A6B78BFCAC21A* or winlog.event_data.OriginalFileName:Apollo.exe)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SIEM DETECTION RULE CREATION
+CUSTOM RULE CREATE
+
+
+host.name
+Message
+winlog.event_data.CommandLine
+winlog.event_data.Image      
+winlog.event_data.ParentCommandLine
+winlog.event_data.ParentImage
+winlog.event_data.ProcessGuid
+winlog.event_data.User
+winlog.event_data.CurrentDirectory
+
+
+DASHBOARD - 
+Event ID: 1 - Process Creates - powershell, cmd, rund1132
+event.code:1 and event.provider: Microsoft-Windows-Sysmon and (powershell or cmd or rundll32)
+
+Event ID: 3 - Network Connections (External) any processes INITIATING a network connection outbound
+event.code:3 and event.provider: Microsoft-Windows-Sysmon and winlog.event_data.Initiated:true
+
+winlog.event_data.Image
+winlog.event_data.SourceIP
+winlog.event_data.DestinationIp
+winlog.event_data.DestinationPort
+
+Event ID: 5001
+event.code:5001 and event.provider: Microsoft-Windows-Windows Defender
+
+EVENT ID:1
+Now create DASHBOARD - INPUT QUERIES, MAKE SURE TO USE TABLE NOT BARCHART
+
+add above fields and drag to make rows and columns. Format it, change values to 999, disable group remaining values as "Other". Remove "TOP 999 VALUES OF"
+ to get just the name of field. 
+
+
+THESE PROCESSES ALONE ARE NOT MALICIOUS, ALWAYS CORRELATE!!!
+
+EVENT ID:3
+
+exclude windows defender - add to query: not winlog.event_data.Image:*MsMpEng.exe
