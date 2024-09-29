@@ -45,5 +45,5 @@ mythic server connection - tcp port range 1-65535, custom IP of both windows and
 
 Go to web gui via IP address and port 7443
 
-Mythic username -   mythic-admin
+Mythic username -   mythic_admin
 pw in .env file, which is hidden on mythic machine. cat .env to find MYTHIC_ADMIN_PASSWORD. 
