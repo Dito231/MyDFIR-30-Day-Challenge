@@ -1,0 +1,10 @@
+Created an ELASTIC DEFEND AGENT on the windows Machine. When trying to wget the svchost file from Mythic, the file downloads and executes, but is immediately blocked by Elastic Defender.
+
+We get security alerts in Kibana that tell us malware was processed on the computer, but was prevented from executing. 
+
+
+ITS NOW THE END OF THE CHALLENGE!
+
+
+
+Day 30 is just for troubleshooting. 
