@@ -1,0 +1,40 @@
+Investigate Mythic Agent
+
+alot of bytes for a c2. heartbeat too - RITA - REAL INTELLIGENCE THREAT ANALYTICS
+
+Process creation, network creations
+
+CHEATED LOL
+svchost-DITO.exe
+
+pivot point - powershell outbound connection
+
+if you have sysmon, always look at the process guid for correlation.
+winlog.event_data.ProcessGuid: {76bcac07-b4d4-66f9-d900-000000000c00}
+
+
+File: svchost-DITO.exe
+File: SHA1=0B7A8444AA90B0E6C0AC5076F64B8693459EDAE7
+
+ProcessId: 1124
+winlog.event_data.ParentProcessId: 2592
+
+Timeline
+
+{76bcac07-b5f2-66f9-df00-000000000c00}
+
+
+Sep 29, 2024. @ 20:15:18.886 - Network Connection towards 144.202.12.235
+Sep 29, 2024 @ 20:15:41.067
+Sep 29, 2024 @ 20:17:04.469 - File Created: svchost-DITO.exe under C:Users\Public\Downloads\
+Sep 29, 2024 @ 20:17:05.686
+Sep 29, 2024 @ 20:17:54.117 - Process Creation: svcchost-DITO.exe
+Sep 29, 2024 @ 20:22:44.350
+
+In Mythic, ran shell ipconfig
+
+packet layer encryption would make c2 stuff blocked. 
+
+shellipconfig - enpoint telemetry, not network telemetry.
+
+spin up atomic red team or caldera.
