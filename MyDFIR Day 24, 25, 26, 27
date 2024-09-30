@@ -1,0 +1,107 @@
+osticket setup tutorial | DAY 24
+
+XAMPP - Apache distribution contining MariaDB, PHP, and Perl. 
+Downloaded XAMPP and put the osTicket VM in the 30 Day challenge Firewall group to protect it from the Internet. Next I edited the configuration file named configuration .inc, chose the started apache and MySQL,
+clicked admin button and configured settings in phpmyadmin to change the user Domain info online. Then I went back to the config file and changed domain info, including username and password info on both the online portal and 
+Config file. 
+
+
+htdocs folder in xampp, for osticket webdocs
+
+
+Then went to Osticket and downloaded it. Extracted. Place osticket contents in new created directory folder made in htdocs. Then go to ip address of osticket. http://IPADDRESS/osticket/upload
+
+
+Went to create osticket installation, but after doing everything, database was not created. Need to go back and create database. 
+
+osticketurl
+http://173.199.127.118/osticket/upload
+
+Your staff control panel
+http://173.199.127.118/osticket/upload/scp
+
+
+PS C:\Users\Administrator> cd C:\xampp\htdocs\osticket\upload\include
+PS C:\xampp\htdocs\osticket\upload\include> icacls .\ost-config.php /reset
+processed file: .\ost-config.php
+Successfully processed 1 files; Failed processing 0 files
+PS C:\xampp\htdocs\osticket\upload\include>
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+osticket + ELK Integration | DAY 25
+
+
+Admin Panel in osticket, agent panel, Manage tab. Select API - Add new API Key. 
+
+
+The ELK and Osticket are in the same VPC, so add the ELK stack VPC 2.0 IP Address. 
+we have an API KEY NOW TO INTEGRATE WITH ELASTIC!
+
+Go to Elastic and go to Management Tab. Go to stack management. Alerts and insights, then Connectors. Create connector. TRIAL LICENSE TO USE APIS. 
+
+Webhook connector. Connector name, POST Method, URL Of osticket vm ip address/osticket/upload/api/tickets.xml
+no auth, Add HTTP Header  -  X-API-Key, API KEY AS VALUE. SAVE AND TEST, USE osTicket's github for the ticket xml payload example. 
+
+NOT WORKING, NETWORK ISSUE. SSH into elk server, check IP. RDP into osticket server, ip a. Private address is fine, but pinging osticket drops. Dest host unreachable.
+ipconfig in osticket, no private ip of 172, instead its a 169 address. go to control panel, network and internet. view status and task, change adapter settings. Change 169 addres shown in ipconfig in cmd. Adapter instance 0
+has 169 address. properties. IPV4, Change ipv4 address and subnet mask to VPC2.0's. 
+
+eth0 - automatic, should be 173.199.127.118 but I get no internet?
+eth02 - 172.31.0.5, 255.255.255.0
+
+RECAP:
+
+Spun up own ELK instance
+Spun up two servers (Linux SSH & Windows RDP)
+Installed Elastic agent to push logs into Elasticsearch
+Created alerts & dashboards (brute force & Mythic agent)
+Spun up own ticketing system (osTicket)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Investigate SSH Brute Force Attack | DAY 26
+will not be going into details on Timelines
+
+Brute Force - 8.219.120.50 root
+
+- IP - Is this IP known to perform brute force activity? YES 
+- Any other users affected by this IP? check user.name -- Yes - 7 (root, admin, administrator, david, adminftp, anand, basesystem)
+- Were any of them successful? Tried "accepted", didn't work. "Accepted" worked, so that's the field we should use. - NO.
+- If so, what activity occured after the sucssful login? - Nothing
+
+abuseipdb.com
+greynoise.com
+
+Make rule based on alerts - edit rule settings, select webhook, its automatic. For each alert, per rule run. 
+
+
+Good CMS Formatting
+Alert: <Alert Name>
+Source IP: <Source IP>
+User: <User>
+Computer
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Investigate RDP Brute Force Attack | DAY 27
+
+
+Alerts, filter alerts by name. Make new Detection rule action. Webhook, paste action from ssh one. 
+
+98.116.35.167 - Administrator
+
+- IP - Is this IP known to perform brute force activity? Not FOUND, WOAH. USA
+- Any other users affected by this IP? check user.name -- Yes - Administrator, root
+- Were any of them successful? Tried "accepted", didn't work. - OMG, I THINK SO. AHHH. 9 events, successful authentications.  
+- If so, what activity occurred after the sucssful login? -  Sep 29, 2024 @ 16:35:33.921
+
+cryptographic operaiton, credential manager credentials were read, n acount was succesfully logged on, key file operation, a users local group membership was enumerated, Process creation. They never left, theyre still here.
+
+
+administrator and 0xd0a60
+
+
+logon identifier - winlog.event_data.TargetLogonId - 0x13aaec
+
+
