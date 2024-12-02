@@ -1,4 +1,4 @@
-osticket setup tutorial | DAY 24
+osticket setup tutorial | DAY 23, 24
 
 XAMPP - Apache distribution contining MariaDB, PHP, and Perl. 
 Downloaded XAMPP and put the osTicket VM in the 30 Day challenge Firewall group to protect it from the Internet. Next I edited the configuration file named configuration .inc, chose the started apache and MySQL,
